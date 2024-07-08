@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+	<data>
+		<menuitem
+                name="Arrendamiento"
+                id="test_kuale_menu_root"/>
+		<!--<menuitem
+                name="Arrendamiento"
+                id="menu_propiedades"
+				parent="test_kuale_menu_root"
+				action="test_kuale_propiedades_tree_action"/>-->
+
+		<menuitem
+                name="Inmuebles"
+                id="menu_propiedades"
+				parent="test_kuale_menu_root"
+				action="test_kuale_propiedades_tree_action"/>
+
+		<menuitem
+                name="Arrendadores"
+                id="menu_arrendadores"
+				parent="test_kuale_menu_root"
+				action="test_kuale_lessor_tree_action"/>
+
+		<menuitem
+                name="Contratos"
+                id="menu_contratos"
+				parent="test_kuale_menu_root"
+				action="test_kuale_contract_tree_action"/>
+	</data>
+</odoo>

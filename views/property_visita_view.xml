@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="view_property_visita_form" model="ir.ui.view">
+		<field name="name">property.visita.form</field>
+		<field name="model">property.visita</field>
+		<field name="arch" type="xml">
+			<form string="Programar Visita">
+				<div class="o_form_container">
+					<div class="o_form_sheet">
+						<div class="form-group row">
+							<label for="name" class="col-sm-2 col-form-label">Nombre</label>
+							<div class="col-sm-10">
+								<field name="name" class="form-control"/>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="lugar" class="col-sm-2 col-form-label">Lugar</label>
+							<div class="col-sm-10">
+								<field name="lugar" class="form-control"/>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="fecha_hora" class="col-sm-2 col-form-label">Fecha y Hora</label>
+							<div class="col-sm-10">
+								<field name="fecha_hora" class="form-control"/>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="comentarios" class="col-sm-2 col-form-label">Comentarios</label>
+							<div class="col-sm-10">
+								<field name="comentarios" widget="text_area" class="form-control"/>
+							</div>
+						</div>
+					</div>
+					<footer class="o_form_buttons_view">
+						<div class="d-flex justify-content-end">
+							<button string="Guardar" type="object" class="btn btn-primary mx-2" name="action_save"/>
+							<button string="Cancelar" class="btn btn-secondary" special="cancel"/>
+						</div>
+					</footer>
+				</div>
+			</form>
+		</field>
+	</record>
+</odoo>

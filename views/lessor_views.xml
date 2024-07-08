@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+	<data>
+		<record id="test_kuale_lessor_tree_action" model="ir.actions.act_window">
+			<field name="name">Arrendadores</field>
+			<field name="res_model">lessor</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_lessor_tree"/>
+			<field name="help" type="html">
+				<p class="o_view_nocontent_smiling_face">
+					Registra un nuevo arrendador
+				</p>
+				<p>
+
+				</p>
+			</field>
+		</record>
+		<!-- Vista de formulario -->
+		<record id="view_lessor_form" model="ir.ui.view">
+			<field name="name">lessor.form</field>
+			<field name="model">lessor</field>
+			<field name="arch" type="xml">
+				<form string="Arrendador">
+					<sheet>
+						<div class="o_col_8">
+							<group>
+								<field name="name"/>
+								<field name="email"/>
+								<field name="phone"/>
+							</group>
+							<notebook>
+								<page string="Propiedades">
+									<field name="properties_ids" nolabel="1">
+										<tree>
+											<field name="name"/>
+											<field name="address"/>
+											<!-- Otros campos de propiedad -->
+										</tree>
+									</field>
+								</page>
+								<page string="Contratos de Arrendamiento">
+									<field name="lease_contract_ids" nolabel="1">
+										<tree>
+											<field name="start_date"/>
+											<field name="end_date"/>
+											<field name="property_id"/>
+											<!-- Otros campos del contrato -->
+										</tree>
+									</field>
+								</page>
+							</notebook>
+						</div>
+						<div class="o_col_4">
+							<div class="oe_chatter">
+								<field name="message_follower_ids" widget="mail_followers"/>
+								<field name="activity_ids" widget="mail_activity"/>
+								<field name="message_ids" widget="mail_thread"/>
+							</div>
+						</div>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- Vista de árbol -->
+		<record id="view_lessor_tree" model="ir.ui.view">
+			<field name="name">lessor.tree</field>
+			<field name="model">lessor</field>
+			<field name="arch" type="xml">
+				<tree string="Arrendadores">
+					<field name="name"/>
+					<field name="email"/>
+					<field name="phone"/>
+					<!-- Otros campos visibles en la vista de árbol -->
+				</tree>
+			</field>
+		</record>
+
+		<!-- Vista de búsqueda -->
+		<record id="view_lessor_search" model="ir.ui.view">
+			<field name="name">lessor.search</field>
+			<field name="model">lessor</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" string="Nombre"/>
+					<field name="email" string="Correo Electrónico"/>
+					<field name="phone" string="Teléfono"/>
+					<!-- Otros campos visibles en la vista de búsqueda -->
+				</search>
+			</field>
+		</record>
+
+	</data>
+</odoo>
